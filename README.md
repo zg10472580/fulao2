@@ -8,14 +8,14 @@
     + ` String a(IvParameterSpec ivParameterSpec, SecretKeySpec secretKeySpec, String str)`
     
 
-##过程：
+## 过程：
 > * 先在解密类中赛选播放视频的json响应，写入本地(append为：Flase)
 > * 通过反编译在播放的activity里面添加一个TextView
 > * 自己写一个web播放器实现播放
 
 
-##**_虽然没技术破解它，为了看高清我想到了其他法子。_**
->###开干：
+## **_虽然没技术破解它，为了看高清我想到了其他法子。_**
+>### 开干：
 >进过多方面打入log，找到
 >* 加密方式：`AES/CBC/PKCS5Padding`
 >*  key：`db6f7f9e5d7a770e0e3497a7d7a077f5`
@@ -25,8 +25,8 @@
 > Md5加密后：`f694f7f85b567bd8` 
 
 
-##添加TextView过程：
-1. ###筛选视频json用到的代码需要转成smali代码才能添加进dex：
+## 添加TextView过程：
+1. ### 筛选视频json用到的代码需要转成smali代码才能添加进dex：
 ```
 String s1 = "json数据";
 String s2 = "video_urls";
@@ -56,7 +56,7 @@ public static void write_data(String content) {
         }
     }
 ```
-2. ###添加TextView的代码：
+2. ### 添加TextView的代码：
 ```
 1. resources.arsc里面自定义添加一个资源id：例如我定义的为xxxxx
 2. 通过开发者助手找到了简介界面的xml为：res/layout/fragment_long_film_description_2.xml
@@ -201,5 +201,5 @@ public static void write_data(String content) {
             goto :goto_22
         .end method
 ```
-##效果图：
+## 效果图：
 ![mahua](C:\Users\plane\Desktop\ad.jpg)
